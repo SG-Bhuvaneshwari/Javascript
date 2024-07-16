@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Rate Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <h2> FD Rate Calculator </h2>
+
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="Enter your month">
+        </div>
+
+        <div>
+            <button type="Submit" onclick="fdrate()"> calculate </button>
+        </div>
+
+        <div id="result">
+
+        </div>
+
+    </div>
+
+<!-- FD Rates 
+<3 months - 5.8%
+3-6 months - 6.5%
+7-9 months - 6.8%
+>=10 months -7%  -->
+
+    <script>
+    function fdrate()
+{
+    let months = Number(document.getElementById("input").value)
+    let rate = 5.8
+
+    if (months<3)
+       rate = 5.8 
+    else if (months>=3 && months<=6)
+       rate = 6.5 
+    else if (months>=7 && months<=9)
+       rate = 6.8
+    else
+       rate = 7
+    
+    let result = document.getElementById("result")
+    result.innerHTML = "your interest rate is " + rate;
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<button onclick="myFunc()"> Add</button>
+<div id="result"> </div>
+
+<script>
+var div =  document.getElementById("result")
+
+function myFunc()
+{
+ var listitem = document.createElement("h1")   
+ listitem.innerHTML = "hello"
+ div.append(listitem)
+}
+</script>
